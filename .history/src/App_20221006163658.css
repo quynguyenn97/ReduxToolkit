@@ -1,10 +1,11 @@
 .btn-actions {
     display: flex;
     gap: 20px;
+    button {
+        cursor: pointer;
+    }
 }
-button {
-    cursor: pointer;
-}
+
 .App {
     text-align: center;
 }

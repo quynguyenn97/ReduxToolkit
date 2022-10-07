@@ -14,12 +14,8 @@ function App() {
     useEffect(() => {
         dispatch(fetchAllUsers());
     }, []);
-    if (isError === true && isLoading === false) {
-        return <div>Something wrongs. Please try again!</div>;
-    }
-    if (isError === true && isLoading === true) {
-        return <div>Loading data...</div>;
-    }
+
+    console.log("check res", listUsers);
     return (
         <div className="App">
             <header className="App-header">

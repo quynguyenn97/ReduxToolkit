@@ -9,21 +9,16 @@ import { fetchAllUsers } from "./redux/slices/userSlice";
 function App() {
     const dispatch = useDispatch();
     const listUsers = useSelector((state) => state.user.listUsers);
-    const isLoading = useSelector((state) => state.user.isLoading);
-    const isError = useSelector((state) => state.user.isError);
     useEffect(() => {
         dispatch(fetchAllUsers());
     }, []);
-    if (isError === true && isLoading === false) {
-        return <div>Something wrongs. Please try again!</div>;
-    }
-    if (isError === true && isLoading === true) {
-        return <div>Loading data...</div>;
-    }
+
+    console.log("check res", listUsers);
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
+
                 <div>
                     <table>
                         <thead>
